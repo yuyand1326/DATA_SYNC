@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_database_info_action" model="ir.actions.act_window">
+            <field name="name">同步数据库信息</field>
+            <field name="res_model">sync.database.info</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_database_info_tree"/>
+            <field name="search_view_id" ref="sync_database_info_search"/>
+        </record>
+
+        <record id="sync_table_info_action" model="ir.actions.act_window">
+            <field name="name">同步表信息</field>
+            <field name="res_model">sync.table.info</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_table_info_view_tree"/>
+            <field name="search_view_id" ref="sync_table_info_view_search"/>
+        </record>
+
+        <record id="sync_table_mapping_action" model="ir.actions.act_window">
+            <field name="name">同步表映射关系</field>
+            <field name="res_model">sync.table.mapping</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_table_mapping_view_tree"/>
+            <field name="search_view_id" ref="sync_table_mapping_view_search"/>
+        </record>
+
+        <record id="sync_field_mapping_action" model="ir.actions.act_window">
+            <field name="name">同步字段映射关系</field>
+            <field name="res_model">sync.field.mapping</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_field_mapping_view_tree"/>
+            <field name="search_view_id" ref="sync_field_mapping_view_search"/>
+        </record>
+
+        <record id="sync_target_table_key_link_action" model="ir.actions.act_window">
+            <field name="name">同步目标表主外键关联</field>
+            <field name="res_model">sync.target.table.key.link</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_target_table_key_link_tree"/>
+            <field name="search_view_id" ref="sync_target_table_key_link_search"/>
+        </record>
+
+        <record id="sync_target_table_key_link_task_action" model="ir.actions.act_window">
+            <field name="name">同步目标表主外键关联任务</field>
+            <field name="res_model">sync.target.table.key.link.task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="sync_target_table_key_link_task_tree"/>
+            <field name="search_view_id" ref="sync_target_table_key_link_task_search"/>
+        </record>
+
+        <menuitem name="DATA_SYNC" id="menu"/>
+        <menuitem name="同步数据库信息" id="sync_database_info_action_menu" action="sync_database_info_action" parent="menu"/>
+        <menuitem name="同步表信息" id="sync_table_info_action_menu" action="sync_table_info_action" parent="menu"/>
+        <menuitem name="同步表映射关系" id="sync_table_mapping_menu" action="sync_table_mapping_action" parent="menu"/>
+        <menuitem name="同步字段映射关系" id="sync_field_mapping_menu" action="sync_field_mapping_action" parent="menu"/>
+        <menuitem name="同步目标表主外键关联" id="sync_target_table_key_link_menu" action="sync_target_table_key_link_action"
+                  parent="menu"/>
+        <menuitem name="同步目标表主外键关联任务" id="sync_target_table_key_link_task_menu"
+                  action="sync_target_table_key_link_task_action" parent="menu"/>
+
+    </data>
+</odoo>

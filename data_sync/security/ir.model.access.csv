@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sync_database_info,sync.database.info,model_sync_database_info,base.group_user,1,1,1,1
+access_sync_table_info,sync.table.info,model_sync_table_info,base.group_user,1,1,1,1
+access_sync_table_mapping,sync.table.mapping,model_sync_table_mapping,base.group_user,1,1,1,1
+access_sync_field_mapping,sync.field.mapping,model_sync_field_mapping,base.group_user,1,1,1,1
+access_sync_target_table_key_link,sync.target.table.key.link,model_sync_target_table_key_link,base.group_user,1,1,1,1
+access_sync_target_table_key_link_task,sync.target.table.key.link.task,model_sync_target_table_key_link_task,base.group_user,1,0,0,1
+access_data_sync,data.sync,model_data_sync,base.group_user,1,1,1,1
+access_data_sync_mysql,data.sync.mysql,model_data_sync_mysql,base.group_user,1,1,1,1
+access_data_sync_mongodb,data.sync.mongodb,model_data_sync_mongodb,base.group_user,1,1,1,1
+access_mysql_connect,mysql.connect,model_mysql_connect,base.group_user,1,1,1,1
+access_postgresql_connect,postgresql.connect,model_postgresql_connect,base.group_user,1,1,1,1
+access_mongodb_connect,mongodb.connect,model_mongodb_connect,base.group_user,1,1,1,1
+access_database_connect_type,database.connect.type,model_database_connect_type,base.group_user,1,1,1,1

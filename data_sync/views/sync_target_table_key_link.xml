@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_target_table_key_link_tree" model="ir.ui.view">
+            <field name="name">同步目标表主外键关联表</field>
+            <field name="model">sync.target.table.key.link</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sync_table_id" string="同步表映射关系"/>
+                    <field name="main_table_id" string="目标表关联主表"/>
+                    <field name="pk_field" string="主表主键"/>
+                    <field name="origin_pk_field" string="源表主键"/>
+                    <field name="sub_table_id" string="目标表"/>
+                    <field name="fk_field" string="外键"/>
+                    <field name="origin_fk_field" string="源表外键"/>
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sync_target_table_key_link_search" model="ir.ui.view">
+            <field name="name">同步目标表主外键关联表</field>
+            <field name="model">sync.target.table.key.link</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sync_table_id" string="同步表映射关系"/>
+                    <field name="main_table_id" string="目标表关联主表"/>
+                    <field name="pk_field" string="主表主键"/>
+                    <field name="origin_pk_field" string="源表主键"/>
+                    <field name="sub_table_id" string="目标表"/>
+                    <field name="fk_field" string="外键"/>
+                    <field name="origin_fk_field" string="源表外键"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="同步表映射关系" name="sync_table" context="{'group_by':'sync_table_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="sync_target_table_key_link_form" model="ir.ui.view">
+            <field name="name">同步目标表主外键关联表</field>
+            <field name="model">sync.target.table.key.link</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sync_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                       domain="[('status', '=', True)]"  string="同步表映射关系"/>
+                                <field name="pk_field" string="主表主键"/>
+                                <field name="sub_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                       domain="[('status', '=', True)]" string="目标表"/>
+                                <field name="origin_fk_field" string="源表外键"/>
+                            </group>
+                            <group>
+                                <field name="main_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                       domain="[('status', '=', True)]" string="目标表关联主表"/>
+                                <field name="origin_pk_field" string="源表主键"/>
+                                <field name="fk_field" string="外键"/>
+                                <field name="status" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

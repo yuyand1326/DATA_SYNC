@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>
+    <!-- data_sync_scheduler -->
+
+    <record id="data_sync_scheduler_group_1" model="ir.cron">
+      <field name="name">数据同步-第1组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync"></field>
+      <field name="state">code</field>
+      <field name="code">model.data_sync_task(group_id=1)</field>
+    </record>
+
+    <record id="data_sync_scheduler_group_2" model="ir.cron">
+      <field name="name">数据同步-第2组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync"></field>
+      <field name="state">code</field>
+      <field name="code">model.data_sync_task(group_id=2)</field>
+    </record>
+
+    <record id="data_sync_scheduler_group_3" model="ir.cron">
+      <field name="name">数据同步-第3组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync"></field>
+      <field name="state">code</field>
+      <field name="code">model.data_sync_task(group_id=3)</field>
+    </record>
+
+    <record id="data_sync_scheduler_group_4" model="ir.cron">
+      <field name="name">数据同步-第4组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync"></field>
+      <field name="state">code</field>
+      <field name="code">model.data_sync_task(group_id=4)</field>
+    </record>
+
+    <!-- data_sync_compensate_scheduler -->
+
+    <record id="data_sync_compensate_scheduler_group_1" model="ir.cron">
+      <field name="name">数据同步补偿任务-第1组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync_mysql"></field>
+      <field name="state">code</field>
+      <field name="code">model.compensate_task(group_id=1, total_group=4)</field>
+    </record>
+
+    <record id="data_sync_compensate_scheduler_group_2" model="ir.cron">
+      <field name="name">数据同步补偿任务-第2组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync_mysql"></field>
+      <field name="state">code</field>
+      <field name="code">model.compensate_task(group_id=2, total_group=4)</field>
+    </record>
+
+    <record id="data_sync_compensate_scheduler_group_3" model="ir.cron">
+      <field name="name">数据同步补偿任务-第3组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync_mysql"></field>
+      <field name="state">code</field>
+      <field name="code">model.compensate_task(group_id=3, total_group=4)</field>
+    </record>
+
+    <record id="data_sync_compensate_scheduler_group_4" model="ir.cron">
+      <field name="name">数据同步补偿任务-第4组</field>
+      <field name="user_id" ref="base.user_root"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="doall" eval="False"></field>
+      <field name="active" eval="False"></field>
+      <field name="model_id" ref="data_sync.model_data_sync_mysql"></field>
+      <field name="state">code</field>
+      <field name="code">model.compensate_task(group_id=0, total_group=4)</field>
+    </record>
+  </data>
+</odoo>

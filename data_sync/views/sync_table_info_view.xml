@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_table_info_view_tree" model="ir.ui.view">
+            <field name="name">同步表信息</field>
+            <field name="model">sync.table.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="database_id" string="数据库"/>
+                    <field name="table_name"/>
+                    <field name="status"/>
+                    <field name="map_status"/>
+                    <field name="table_description"/>
+                    <field name="database_description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sync_table_info_view_search" model="ir.ui.view">
+            <field name="name">同步表信息</field>
+            <field name="model">sync.table.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="database_id" string="数据库"/>
+                    <field name="table_name"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="数据库" name="sync_database" context="{'group_by':'database_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="sync_table_info_view_form" model="ir.ui.view">
+            <field name="name">同步表信息</field>
+            <field name="model">sync.table.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="database_id" options="{'no_create': True, 'no_create_edit': True}"
+                                   domain="[('status', '=', True)]" string="数据库"/>
+                            <field name="table_name"/>
+                            <field name="status"/>
+                            <field name="map_status"/>
+                            <field name="table_description"/>
+                            <field name="database_description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

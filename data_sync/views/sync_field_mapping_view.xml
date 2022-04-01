@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_field_mapping_view_tree" model="ir.ui.view">
+            <field name="name">同步字段映射关系表</field>
+            <field name="model">sync.field.mapping</field>
+            <field name="arch" type="xml">
+                <tree default_order="sync_table_id asc, unique_identify desc">
+                    <field name="sync_table_id" string="同步表映射关系"/>
+                    <field name="origin_table"/>
+                    <field name="origin_field"/>
+                    <field name="origin_field_type"/>
+                    <field name="origin_field_description"/>
+                    <field name="target_table"/>
+                    <field name="target_field"/>
+                    <field name="target_field_type"/>
+                    <field name="target_field_description"/>
+                    <field name="unique_identify"/>
+                    <field name="status"/>
+                    <field name="date_node" string="时间节点" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sync_field_mapping_view_search" model="ir.ui.view">
+            <field name="name">同步字段映射关系表</field>
+            <field name="model">sync.field.mapping</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sync_table_id" string="同步表映射关系"/>
+                    <field name="origin_table"/>
+                    <field name="origin_field"/>
+                    <field name="origin_field_type"/>
+                    <field name="origin_field_description"/>
+                    <field name="target_table"/>
+                    <field name="target_field"/>
+                    <field name="target_field_type"/>
+                    <field name="target_field_description"/>
+                    <field name="unique_identify"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="同步表映射关系" name="sync_table" context="{'group_by':'sync_table_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="sync_field_mapping_view_form" model="ir.ui.view">
+            <field name="name">同步字段映射关系表</field>
+            <field name="model">sync.field.mapping</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="sync_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                   domain="[('status', '=', True)]" string="同步表映射关系"/>
+                            <field name="origin_table"/>
+                            <field name="origin_field"/>
+                            <field name="origin_field_type"/>
+                            <field name="origin_field_description"/>
+                            <field name="target_table"/>
+                            <field name="target_field"/>
+                            <field name="target_field_type"/>
+                            <field name="target_field_description"/>
+                            <field name="unique_identify"/>
+                            <field name="status"/>
+                            <field name="date_node" string="时间节点" help="是否是最后更新时间字段"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -7,7 +7,7 @@
         数据同步模块""",
 
     'description': """
-        数据同步(MongoDB --> PostgreSQL)
+        本模块主要进行MySQL到PostgreSQL以及MongoDB到PostgreSQL的数据平行迁移，以数据的最后更新时间（最后修改时间）作为时间节点，可选择某一区间内的数据进行迁移。
     """,
 
     # Categories can be used to filter modules in modules listing
@@ -32,8 +32,5 @@
         'views/sync_field_mapping_view.xml',
         'views/menu.xml',
     ],
-    # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
+    'license': 'LGPL-3',
 }

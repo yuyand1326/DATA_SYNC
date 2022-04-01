@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_database_info_tree" model="ir.ui.view">
+            <field name="name">同步数据库信息</field>
+            <field name="model">sync.database.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="database_name"/>
+                    <field name="server_host" string="数据库主机(ip)"/>
+                    <field name="server_port" />
+                    <field name="user" />
+                    <field name="password" />
+                    <field name="status" />
+                    <field name="database_description"/>
+                    <field name="database_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sync_database_info_search" model="ir.ui.view">
+            <field name="name">同步数据库信息</field>
+            <field name="model">sync.database.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="database_name"/>
+                    <field name="database_description"/>
+                    <field name="database_type"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sync_database_info_form" model="ir.ui.view">
+            <field name="name">同步数据库信息</field>
+            <field name="model">sync.database.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="database_name"/>
+                                <field name="server_port"/>
+                                <field name="password" />
+                                <field name="database_description"/>
+                            </group>
+                            <group>
+                                <field name="server_host" string="数据库主机(ip)"/>
+                                <field name="user" />
+                                <field name="status" />
+                                <field name="database_type" placeholder="请使用官方标准写法, 参照各类型数据库官网，如：MySQL，PostgreSQL等"
+                                       help="请使用官方标准写法, 参照各类型数据库官网，如：MySQL，PostgreSQL等" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

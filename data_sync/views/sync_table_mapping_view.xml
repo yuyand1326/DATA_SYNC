@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sync_table_mapping_view_tree" model="ir.ui.view">
+            <field name="name">同步表映射关系表</field>
+            <field name="model">sync.table.mapping</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="origin_table_id" string="源同步表"/>
+                    <field name="origin_table_description"/>
+                    <field name="target_table_id" string="目标同步表"/>
+                    <field name="target_table_description"/>
+                    <field name="sequence"/>
+                    <field name="last_sync_time" string=""/>
+                    <field name="end_sync_time"/>
+                    <field name="status"/>
+                    <field name="group_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sync_table_mapping_view_search" model="ir.ui.view">
+            <field name="name">同步表映射关系表</field>
+            <field name="model">sync.table.mapping</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="origin_table_id" string="源同步表"/>
+                    <field name="origin_table_description"/>
+                    <field name="target_table_id" string="目标同步表"/>
+                    <field name="target_table_description"/>
+                    <field name="sequence"/>
+                    <field name="last_sync_time"/>
+                    <field name="end_sync_time"/>
+                    <field name="group_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="同步表映射分组" name="sync_table_group" context="{'group_by':'group_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="sync_table_mapping_view_form" model="ir.ui.view">
+            <field name="name">同步表映射关系表</field>
+            <field name="model">sync.table.mapping</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="origin_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                   domain="[('status', '=', True)]" string="源同步表"/>
+                            <field name="origin_table_description"/>
+                            <field name="target_table_id" options="{'no_create': True, 'no_create_edit': True}"
+                                   domain="[('status', '=', True)]" string="目标同步表"/>
+                            <field name="target_table_description"/>
+                            <field name="sequence"/>
+                            <field name="last_sync_time"/>
+                            <field name="end_sync_time"/>
+                            <field name="status"/>
+                            <field name="group_id"/>
+                        </group>
+                        <fieldset class="so_fieldset">
+                            <legend>同步字段列表</legend>
+                            <field name="sync_fields_ids" mode="tree">
+                                <tree editable="bottom" limit="20">
+                                    <field name="origin_field" required="1"/>
+                                    <field name="origin_field_type"/>
+                                    <field name="origin_field_description"/>
+                                    <field name="target_field" required="1"/>
+                                    <field name="target_field_type"/>
+                                    <field name="target_field_description"/>
+                                    <field name="unique_identify"/>
+                                    <field name="status"/>
+                                    <field name="date_node" string="时间节点" help="是否是最后更新时间字段"/>
+                                </tree>
+                            </field>
+                        </fieldset>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

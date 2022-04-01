@@ -4,7 +4,7 @@
     'sequence': 3,
 
     'summary': """
-        数据同步模块""",
+        Parallel data migration from MySQL to PostgreSQL or MongoDB to PostgreSQL""",
 
     'description': """
         本模块主要进行MySQL到PostgreSQL以及MongoDB到PostgreSQL的数据平行迁移，以数据的最后更新时间（最后修改时间）作为时间节点，可选择某一区间内的数据进行迁移。

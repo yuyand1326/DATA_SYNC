@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "data_sync",
+    'author': 'yuyand',
     'sequence': 3,
 
     'summary': """

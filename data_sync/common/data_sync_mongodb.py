@@ -82,7 +82,6 @@ class DataSyncMongoDb(models.Model):
         校验源表是否存在待同步数据
         """
         last_time_name = field_map.get('last_time_name')
-        last_time_name_sort = '%s ASC' % last_time_name
         datas = origin_db[origin_table_name].aggregate([
             {
                 "$match": {"$and": [{last_time_name: {"$gte": item.last_sync_time}},
@@ -90,7 +89,7 @@ class DataSyncMongoDb(models.Model):
 
             },
             {
-                '$sort': {last_time_name_sort: 1}
+                '$sort': {last_time_name: 1}
             },
             {
                 '$project': field_map.get('origin_field_dict')

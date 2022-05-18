@@ -32,7 +32,7 @@ class DataSync(models.Model):
             '2': self.env['data.sync.mongodb'].data_sync_task_mongodb
         }
         method = database_type.get(item.origin_table_id.database_id.database_type, None)
-        if (method and item.origin_table_id.status and item.origin_table_id.status
+        if (method and item.origin_table_id.status and item.target_table_id.status
                 and item.origin_table_id.database_id.status
                 and item.target_table_id.database_id.status):
             method(item)
